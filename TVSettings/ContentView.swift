@@ -2,20 +2,23 @@
 //  ContentView.swift
 //  TVSettings
 //
-//  Created by Chris on 4/27/25.
-//
 
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            HStack {
+                Image(.settingsAtv2Device)
+                    .foregroundStyle(Color(UIColor.quaternaryLabel))
+                    .frame(width: UIScreen.main.bounds.width * 0.45)
+                Form {}
+            }
+            .navigationTitle("Settings")
         }
-        .padding()
+        .background(Color.gray.opacity(colorScheme == .light ? 0.7 : 0.2))
     }
 }
 

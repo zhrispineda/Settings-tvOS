@@ -2,8 +2,6 @@
 //  TVSettingsApp.swift
 //  TVSettings
 //
-//  Created by Chris on 4/27/25.
-//
 
 import SwiftUI
 
