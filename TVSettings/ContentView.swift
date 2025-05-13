@@ -17,7 +17,7 @@ struct ContentView: View {
                 
                 ZStack {
                     Form {
-                        NavigationLink("General") {}
+                        NavigationLink("General", destination: GeneralView())
                         NavigationLink("Users and Accounts") {}
                         NavigationLink("Video and Audio") {}
                         NavigationLink("Screen Saver") {}
