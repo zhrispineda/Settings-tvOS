@@ -26,16 +26,16 @@ struct SettingsView<Content: View>: View {
             HStack {
                 Image(.settingsAtv2Device)
                     .foregroundStyle(Color(UIColor.quaternaryLabel))
-                    .frame(width: UIScreen.main.bounds.width * 0.45)
+                    .frame(width: UIScreen.main.bounds.width * 0.40)
                 
                 ZStack {
                     Form {
                         content
                     }
-                    .contentMargins(30, for: .scrollContent)
+                    .contentMargins(20, for: .scrollContent)
                     .frame(height: 800)
                     .padding(.top, 100)
-                    ._safeAreaInsets(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
+                    ._safeAreaInsets(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 20))
                 }
             }
             .navigationTitle(title)
