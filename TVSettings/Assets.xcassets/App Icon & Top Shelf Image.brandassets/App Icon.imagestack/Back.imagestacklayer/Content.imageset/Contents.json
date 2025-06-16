@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "Settings0.png",
+      "filename" : "layer0.png",
       "idiom" : "tv",
       "scale" : "1x"
     },
     {
-      "filename" : "Settings0@2x.png",
+      "filename" : "layer0@2x.png",
       "idiom" : "tv",
       "scale" : "2x"
     }
