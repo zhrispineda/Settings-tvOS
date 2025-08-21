@@ -10,18 +10,18 @@ struct ContentView: View {
     
     var body: some View {
         SettingsView(title: "Settings") {
-            NavigationLink("General", destination: GeneralView())
-            NavigationLink("Users and Accounts") {}
-            NavigationLink("Video and Audio") {}
-            NavigationLink("Screen Saver") {}
-            NavigationLink("AirPlay and HomeKit") {}
-            NavigationLink("Remotes and Devices") {}
-            NavigationLink("Accessibility") {}
-            NavigationLink("Apps") {}
-            NavigationLink("Network") {}
-            NavigationLink("System") {}
-            NavigationLink("Developer") {}
-            Button("Sleep Now") {}
+            NavigationLink("GeneralTitle", destination: GeneralView())
+            NavigationLink("ProfilesTitle") {}
+            NavigationLink("AudioVideoTitle") {}
+            NavigationLink("ScreenSaverTitle") {}
+            NavigationLink("AirPlayTitle") {}
+            NavigationLink("RemotesTitle") {}
+            NavigationLink("AccessibilityTitle") {}
+            NavigationLink("AppsTitle") {}
+            NavigationLink("NetworkTitle") {}
+            NavigationLink("SystemTitle") {}
+            NavigationLink("DeveloperTitle") {}
+            Button("SleepTitle") {}
         }
     }
 }
