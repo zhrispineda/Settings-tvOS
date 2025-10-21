@@ -10,7 +10,7 @@ struct ContentView: View {
     
     var body: some View {
         SettingsView(title: "Settings") {
-            NavigationLink("GeneralTitle", destination: GeneralView())
+            NavigationLink("GeneralTitle") {}
             NavigationLink("ProfilesTitle") {}
             NavigationLink("AudioVideoTitle") {}
             NavigationLink("ScreenSaverTitle") {}
