@@ -7,7 +7,6 @@ import SwiftUI
 
 /// Template for Settings-like views on tvOS.
 struct SettingsView<Content: View>: View {
-    @Environment(\.colorScheme) private var colorScheme
     @ViewBuilder let content: Content
     var title = ""
     
@@ -40,7 +39,6 @@ struct SettingsView<Content: View>: View {
             }
             .navigationTitle(title)
         }
-        .background(Color.gray.opacity(colorScheme == .light ? 0.7 : 0.2))
     }
 }
 

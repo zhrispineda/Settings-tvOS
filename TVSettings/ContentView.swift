@@ -6,8 +6,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.colorScheme) private var colorScheme
-    
     var body: some View {
         SettingsView(title: "Settings") {
             NavigationLink("GeneralTitle") {}
