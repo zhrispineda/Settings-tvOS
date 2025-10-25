@@ -47,7 +47,21 @@ struct ContentView: View {
                         TSKItem("BUTTON_TITLE") {}
                     }
                 }
-                TSKItem("Profiles and Accounts") {}
+                
+                TSKItem("AccountsTitle") {
+                    TSKSection("AccountsUserProfilesPrimaryUserGroupTitle") {
+                        TSKItem("AccountsUserProfilesAddPrimaryUserTitle", previewDescription: "AccountsAddDefaultUserProfileDescription") {}
+                    }
+                    
+                    TSKSection("AccountsUserProfilesGuestUsersGroupTitle") {
+                        TSKItem("AccountsAddNewUserTitle", previewDescription: "AccountsAddAdditionalUserProfileDescription") {}
+                    }
+                    
+                    TSKSection("iTMSAccountsLocationSectionTitle") {
+                        TSKItem("iTMSLocationTitle") {}
+                    }
+                }
+                
                 TSKItem("Video and Audio") {}
                 TSKItem("Screen Saver") {}
                 TSKItem("AirPlay and Apple Home") {}
