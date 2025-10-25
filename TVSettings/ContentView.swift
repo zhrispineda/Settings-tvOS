@@ -7,44 +7,44 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TSKViewWrapper("Settings") {
+        TSKViewWrapper("SettingsTitle") {
             TSKGroup {
-                TSKItem("General") {
+                TSKItem("GeneralTitle") {
                     TSKSection {
-                        TSKItem("About") {}
-                        TSKItem("Appearance") {}
-                        TSKItem("Sleep After") {}
-                        TSKItem("Restrictions") {}
-                        TSKItem("Privacy & Security") {}
-                        TSKItem("Legal & Regulatory") {}
+                        TSKItem("AboutTitle") {}
+                        TSKItem("GeneralAppearanceSectionTitle", previewDescription: "UserInterfaceStyleDescription") {}
+                        TSKItem("SleepTimeTitle", previewDescription: "SleepTimeDescription") {}
+                        TSKItem("RestrictionsTitle") {}
+                        TSKItem("PrivacyTitle") {}
+                        TSKItem("LegalAndRegulatoryTitle") {}
                     }
                     
                     TSKSection("Language & Region") {
-                        TSKItem("Apple TV Languages") {}
-                        TSKItem("Keyboard Layout") {}
-                        TSKItem("Dictation") {}
-                        TSKItem("Region") {}
+                        TSKItem("Apple TV Languages", previewImageName: "globe") {}
+                        TSKItem("Keyboard Layout", previewDescription: "KeyboardTypeDescription") {}
+                        TSKItem("Dictation", previewDescription: "DictationDescription") {}
+                        TSKItem("RegionFormatTitle") {}
                     }
                     
-                    TSKSection("Siri") {
-                        TSKItem("Siri") {}
-                        TSKItem("Siri Language") {}
-                        TSKItem("Siri & Dictation History") {}
-                        TSKItem("Always Show Speech") {}
-                        TSKItem("On-Screen Actions") {}
-                        TSKItem("Use with Ask Siri") {}
-                        TSKItem("About Siri, Dictation & Privacy") {}
+                    TSKSection("GeneralSiriSectionTitle") {
+                        TSKItem("SiriEnableTitle", previewDescription: "SiriDescription") {}
+                        TSKItem("SiriLanguageTitle", previewDescription: "SiriDescription") {}
+                        TSKItem("SiriHistoryTitle", previewDescription: "SiriHistoryDescriptionNotOptedIn") {}
+                        TSKItem("SiriAlwaysShowSpeechTitle", previewDescription: "SiriAlwaysShowSpeechDescription") {}
+                        TSKItem("SiriOSAItemTitle", previewDescription: "SiriOSAItemDescription") {}
+                        TSKItem("SiriTCCItemTitle", previewDescription: "SiriTCCItemDescription") {}
+                        TSKItem("BUTTON_TITLE") {}
                     }
                     
-                    TSKSection("Date & Time") {
-                        TSKItem("Set Automatically") {}
-                        TSKItem("Time Zone") {}
-                        TSKItem("Time Format") {}
+                    TSKSection("GeneralDateAndTimeSectionTitle") {
+                        TSKItem("TimeZoneSetAutomaticallyTitle") {}
+                        TSKItem("TimeZoneTitle") {}
+                        TSKItem("TimeZoneSet24HourTitle", previewDescription: "SiriDescription") {}
                     }
                     
-                    TSKSection("VPN & Device Management") {
+                    TSKSection("GeneralManagementSectionTitle") {
                         TSKItem("com.apple.preferences.application-firewall") {}
-                        TSKItem("About VPNs & Privacy") {}
+                        TSKItem("BUTTON_TITLE") {}
                     }
                 }
                 TSKItem("Profiles and Accounts") {}

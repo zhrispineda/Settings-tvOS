@@ -24,7 +24,7 @@ class TVSettingKitBridge {
         
         let group = groupClass.perform(
             selector,
-            with: title,
+            with: localized(title),
             with: items
         )?.takeUnretainedValue() as? NSObject
         

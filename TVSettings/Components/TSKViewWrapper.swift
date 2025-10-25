@@ -72,7 +72,7 @@ struct TSKViewWrapper: UIViewControllerRepresentable {
         }
         
         if let title = navigationTitle {
-            tskVC.title = title
+            tskVC.title = localized(title)
         }
         
         let navController = UINavigationController(rootViewController: tskVC)
@@ -273,12 +273,16 @@ func TSKItem(
 ) -> TSKViewWrapper.SettingItemData {
     let subviews = builder()
     return TSKViewWrapper.SettingItemData(
-        title: title,
+        title: localized(title),
         accessoryType: accessoryType,
         action: nil,
         subviews: subviews.isEmpty ? nil : subviews,
-        previewDescription: previewDescription,
+        previewDescription: localized(previewDescription ?? ""),
         previewImageName: previewImageName,
         badgeCount: badgeCount
     )
+}
+
+func localized(_ key: String, table: String? = nil) -> String {
+    NSLocalizedString(key, tableName: table, bundle: .main, value: key, comment: "")
 }

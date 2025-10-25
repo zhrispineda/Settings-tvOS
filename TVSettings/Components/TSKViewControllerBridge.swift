@@ -63,7 +63,18 @@ class TSKViewControllerBridge: NSObject {
     }
     
     private static func createPreviewViewController(with imageName: String, description: String?) -> UIViewController? {
-        guard let image = UIImage(named: imageName) else { return nil }
+        let image: UIImage
+        
+        if imageName == "globe" {
+            let configuration = UIImage.SymbolConfiguration(pointSize: 512, weight: .thin, scale: .default)
+            guard let sysImage = UIImage(systemName: imageName, withConfiguration: configuration) else {
+                return nil
+            }
+            image = sysImage
+        } else {
+            guard let namedImage = UIImage(named: imageName) else { return nil }
+            image = namedImage
+        }
         
         guard
             let vibrantImageViewClass = NSClassFromString("TSKVibrantImageView") as? NSObject.Type,
@@ -89,3 +100,4 @@ class TSKViewControllerBridge: NSObject {
         return previewVC
     }
 }
+
