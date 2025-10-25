@@ -264,7 +264,7 @@ func TSKItem(
 }
 
 func TSKItem(
-    title: String,
+    _ title: String,
     accessoryType: TSKViewWrapper.SettingItemData.AccessoryType = .none,
     previewDescription: String? = nil,
     previewImageName: String = "settings_atv2_device",
