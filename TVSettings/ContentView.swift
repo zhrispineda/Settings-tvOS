@@ -93,14 +93,38 @@ struct ContentView: View {
                     }
                 }
                 
-                TSKItem("Screen Saver") {}
-                TSKItem("AirPlay and Apple Home") {}
-                TSKItem("Remotes and Devices") {}
-                TSKItem("Accessibility") {}
-                TSKItem("Apps") {}
-                TSKItem("Network") {}
-                TSKItem("System") {}
-                TSKItem("Developer") {}
+                TSKItem("Screen Saver") {
+                    TSKSection {}
+                }
+                
+                TSKItem("AirPlay and Apple Home") {
+                    TSKSection {}
+                }
+                
+                TSKItem("Remotes and Devices") {
+                    TSKSection {}
+                }
+                
+                TSKItem("Accessibility") {
+                    TSKSection {}
+                }
+                
+                TSKItem("Apps") {
+                    TSKSection {}
+                }
+                
+                TSKItem("Network") {
+                    TSKSection {}
+                }
+                
+                TSKItem("System") {
+                    TSKSection {}
+                }
+                
+                TSKItem("Developer") {
+                    TSKSection {}
+                }
+                
                 TSKItem("Power Off") {}
             }
         }
