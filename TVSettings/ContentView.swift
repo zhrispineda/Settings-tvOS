@@ -93,8 +93,18 @@ struct ContentView: View {
                     }
                 }
                 
-                TSKItem("Screen Saver") {
-                    TSKSection {}
+                TSKItem("ScreenSaverTitle") {
+                    TSKSection {
+                        TSKItem("SaverChooseSaverTitle", previewDescription: "SaverChooseSaverDescription", previewImageName: "settings-screensaver-aerials") {}
+                        TSKItem("SaverStartDelayTitle", previewDescription: "SaverStartDelayDescription", previewImageName: "settings-screensaver-aerials") {}
+                        TSKItem("SaverShowDuringMusicTitle", previewDescription: "SaverShowDuringMusicDescription", previewImageName: "settings-screensaver-aerials") {}
+                    }
+                    
+                    TSKSection("SaverBackdropCategories") {
+                        TSKItem("SaverBackdropAerialsTitle", previewDescription: "SaverBackdropAerialsDescription", previewImageName: "settings-screensaver-aerials") {}
+                        TSKItem("SaverBackdropPhotosTitle", previewDescription: "SaverBackdropPhotosDescription", previewImageName: "settings-screensaver-aerials") {}
+                        TSKItem("SaverBackdropPortraitClockTitle", previewDescription: "SaverBackdropPortraitClockSetupDescription", previewImageName: "settings-screensaver-aerials") {}
+                    }
                 }
                 
                 TSKItem("AirPlay and Apple Home") {

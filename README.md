@@ -10,7 +10,7 @@ A **work-in-progress** recreation of the tvOS Settings app.
 
 > [!CAUTION]
 > This project makes use of `TVSettingKit.framework`, a private API not meant for public use as it is not officially supported.
-> It is strongly recommended to NOT use code in this project for any public apps. It may be unstable and could break at any time without notice.
+> It is strongly recommended to NOT use code in this project for any public apps.
 
 ## Usage
 Open the project in Xcode and run with either a Simulator instance or a paired physical device running tvOS as a destination.
