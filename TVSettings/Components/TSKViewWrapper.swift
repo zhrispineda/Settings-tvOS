@@ -228,3 +228,57 @@ struct SettingGroupSectionBuilder {
         components
     }
 }
+
+// MARK: - Builder Functions
+func TSKGroup(
+    _ title: String? = nil,
+    @SettingItemBuilder builder: () -> [TSKViewWrapper.SettingItemData]
+) -> TSKViewWrapper.SettingGroupData {
+    TSKViewWrapper.SettingGroupData(title: title, items: builder())
+}
+
+func TSKSection(
+    _ title: String? = nil,
+    @SettingItemBuilder builder: () -> [TSKViewWrapper.SettingItemData]
+) -> TSKViewWrapper.SettingGroupData {
+    TSKViewWrapper.SettingGroupData(title: title, items: builder())
+}
+
+func TSKItem(
+    title: String,
+    accessoryType: TSKViewWrapper.SettingItemData.AccessoryType = .none,
+    previewDescription: String? = nil,
+    previewImageName: String = "settings_atv2_device",
+    badgeCount: Int = 0,
+    action: (() -> Void)? = nil
+) -> TSKViewWrapper.SettingItemData {
+    TSKViewWrapper.SettingItemData(
+        title: title,
+        accessoryType: accessoryType,
+        action: action,
+        subviews: nil,
+        previewDescription: previewDescription,
+        previewImageName: previewImageName,
+        badgeCount: badgeCount
+    )
+}
+
+func TSKItem(
+    title: String,
+    accessoryType: TSKViewWrapper.SettingItemData.AccessoryType = .none,
+    previewDescription: String? = nil,
+    previewImageName: String = "settings_atv2_device",
+    badgeCount: Int = 0,
+    @SettingGroupSectionBuilder builder: () -> [TSKViewWrapper.SettingGroupData]
+) -> TSKViewWrapper.SettingItemData {
+    let subviews = builder()
+    return TSKViewWrapper.SettingItemData(
+        title: title,
+        accessoryType: accessoryType,
+        action: nil,
+        subviews: subviews.isEmpty ? nil : subviews,
+        previewDescription: previewDescription,
+        previewImageName: previewImageName,
+        badgeCount: badgeCount
+    )
+}
