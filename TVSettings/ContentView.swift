@@ -135,8 +135,24 @@ struct ContentView: View {
                     }
                 }
                 
-                TSKItem("Accessibility") {
-                    TSKSection {}
+                TSKItem("AccessibilityTitle") {
+                    TSKSection("AXVisionSectionTitle") {
+                        TSKItem("AXHoverTextTitle", previewDescription: "AXHoverTextDescription") {}
+                        TSKItem("AXDisplayAndTextSizeTitle") {}
+                        TSKItem("AXMotionTitle") {}
+                        TSKItem("AXAudioDescriptionsTitle", previewDescription: "AXAudioDescriptionsDescription") {}
+                    }
+                    
+                    TSKSection("HearingSectionTitle") {
+                        TSKItem("AXMonoAudioItemTitle") {}
+                        TSKItem("AXAudioBalanceItemTitle") {}
+                        TSKItem("AXSubtitlesAndCaptiontingTitle") {}
+                        TSKItem("AXExtendedVoiceIsolationModesTitle", previewDescription: "AXExtendedVoiceIsolationModesDetails") {}
+                    }
+                    
+                    TSKSection("AXGeneralSectionTitle") {
+                        TSKItem("AXAccessibilityMenuTitle", previewDescription: "AXAccessibilityMenuDescription") {}
+                    }
                 }
                 
                 TSKItem("Apps") {
