@@ -21,6 +21,11 @@
 			path = TVSettings;
 			sourceTree = "<group>";
 		};
+		834BE37B2EAD2C9C00BC815A /* Assets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +42,7 @@
 		8333873B2DBEBB490031CF45 = {
 			isa = PBXGroup;
 			children = (
+				834BE37B2EAD2C9C00BC815A /* Assets */,
 				83A662F42DD3CE3A0056694D /* README.md */,
 				833387462DBEBB490031CF45 /* TVSettings */,
 				833387452DBEBB490031CF45 /* Products */,
@@ -68,6 +74,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				833387462DBEBB490031CF45 /* TVSettings */,
+				834BE37B2EAD2C9C00BC815A /* Assets */,
 			);
 			name = TVSettings;
 			packageProductDependencies = (

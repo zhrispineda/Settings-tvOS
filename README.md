@@ -1,6 +1,8 @@
 # Settings-tvOS
 A **work-in-progress** recreation of the tvOS Settings app.
 
+![An image of the recreated tvOS Settings app in both light and dark mode. A large Apple TV icon is shown on the left with a list of options from General to Developer are shown on the right.](Assets/Preview.png)
+
 ## Information
 - This project is a recreation of Apple's Settings app for tvOS 26.0.1 (23J362).
 - All features within the app are only simulations and have no effect on the device outside of the app.
