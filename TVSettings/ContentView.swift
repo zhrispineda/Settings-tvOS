@@ -62,7 +62,37 @@ struct ContentView: View {
                     }
                 }
                 
-                TSKItem("Video and Audio") {}
+                TSKItem("AudioVideoTitle") {
+                    TSKSection("AVVideoSectionTitle") {
+                        TSKItem("AVFormatTitle", previewDescription: "AVFormatDescription") {}
+                        TSKItem("AVSDRColorMappingTitle", previewDescription: "AVSDRColorMappingDescription") {}
+                        TSKItem("AVNativeModeSwitchingFormatToMatchVideo", previewDescription: "AVNativeModeSwitchingFormatToMatchVideoDescription") {}
+                        TSKItem("AVTapToZoomTitle", previewDescription: "AVTapToZoomDescription") {}
+                        TSKItem("AVRestoreDefaultDisplayMode", previewDescription: "AVRestoreDefaultDisplayModeDescription") {}
+                    }
+                    
+                    TSKSection("AVAudioSectionTitle") {
+                        TSKItem("AVDolbyDigitalTitle", previewDescription: "AVDolbySurroundSoundWithConvertFormatDescription") {}
+                        TSKItem("AVNavigationClicksTitle") {}
+                        TSKItem("AVTransitonSoundsTitle") {}
+                        TSKItem("AVAudioOutputTitle", previewDescription: "AVAudioOutputDescription") {}
+                        TSKItem("AVAudioLanguageTitle", previewDescription: "AVAudioLanguageTitleDescription") {}
+                    }
+                    
+                    TSKSection("AVAudioSectionTitle") {
+                        TSKItem("AVShowForDifferentLanguagesTitle", previewDescription: "AVShowForDifferentLanguagesDescription") {}
+                        TSKItem("AVSubtitleLanguageTitle") {}
+                        TSKItem("AVShowWhenMutedTitle", previewDescription: "AVShowWhenMutedDescription") {}
+                        TSKItem("AVShowOnSkipBackTitle", previewDescription: "AVShowOnSkipBackDescription") {}
+                    }
+                    
+                    TSKSection("AVCalibrationSectionTitle") {
+                        TSKItem("AVAudioSyncTitle", previewDescription: "AVAudioSyncDescription") {}
+                        TSKItem("AVOverscanTitle") {}
+                        TSKItem("AVColorBarsTitle") {}
+                    }
+                }
+                
                 TSKItem("Screen Saver") {}
                 TSKItem("AirPlay and Apple Home") {}
                 TSKItem("Remotes and Devices") {}
