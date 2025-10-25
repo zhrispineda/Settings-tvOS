@@ -121,8 +121,18 @@ struct ContentView: View {
                     }
                 }
                 
-                TSKItem("Remotes and Devices") {
-                    TSKSection {}
+                TSKItem("RemotesTitle") {
+                    TSKSection("BluetoothOtherDevicesSectionTitle") {
+                        TSKItem("BluetoothItemTitle") {}
+                        TSKItem("RCPairRemoteTitle", previewDescription: "RCPairRemoteInstructionalText") {}
+                        TSKItem("RCSystemPairingsTitle", previewDescription: "RCSystemPairingsInstructionalText") {}
+                        TSKItem("RCLearnRemoteTitle", previewDescription: "RCLearnRemoteInstructionalText") {}
+                    }
+                    
+                    TSKSection("RCSystemControlGroupTitle") {
+                        TSKItem("RCIRPowerTitle", previewDescription: "RCIRPowerInstructionalTextNoRemote") {}
+                        TSKItem("RCVCTitle", previewDescription: "RCVCInstructionalTextNoRemote") {}
+                    }
                 }
                 
                 TSKItem("Accessibility") {
