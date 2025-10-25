@@ -107,8 +107,18 @@ struct ContentView: View {
                     }
                 }
                 
-                TSKItem("AirPlay and Apple Home") {
-                    TSKSection {}
+                TSKItem("AirPlayTitle") {
+                    TSKSection {
+                        TSKItem("APEnabledTitle", previewDescription: "APDescriptionText") {}
+                        TSKItem("APAccessControlTitle") {}
+                        TSKItem("APCRDTitle", previewDescription: "APCRDModeDescriptionText") {}
+                        TSKItem("AVAdjustForOverscanTitle", previewDescription: "AVAdjustForOverscanDescription") {}
+                        TSKItem("AirPlayPeerToPeerTitle", previewDescription: "AirPlayPeerToPeerDescription") {}
+                    }
+                    
+                    TSKSection("HomeKitSectionTitle") {
+                        TSKItem("WHARoomTitle", previewDescription: "WHASynchronizingDescription") {}
+                    }
                 }
                 
                 TSKItem("Remotes and Devices") {
