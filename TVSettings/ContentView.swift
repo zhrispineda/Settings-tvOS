@@ -155,8 +155,12 @@ struct ContentView: View {
                     }
                 }
                 
-                TSKItem("Apps") {
-                    TSKSection {}
+                TSKItem("AppsTitle") {
+                    TSKSection {
+                        TSKItem("AutoUpdateAppsTitle") {}
+                        TSKItem("AppsAutoDownloadBackgroundAssetsTitle", previewDescription: "AppsAutoDownloadBackgroundAssetsDescription") {}
+                        TSKItem("AppsAutoOffloadTitle", previewDescription: "AppsAutoOffloadDescription") {}
+                    }
                 }
                 
                 TSKItem("Network") {
