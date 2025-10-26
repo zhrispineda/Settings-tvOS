@@ -163,8 +163,17 @@ struct ContentView: View {
                     }
                 }
                 
-                TSKItem("Network") {
-                    TSKSection {}
+                TSKItem("NetworkTitle") {
+                    TSKSection("NetworkConnectionTitle") {
+                        TSKItem("NetworkEthernetItem", previewDescription: "NetworkEthernetActiveItemDescription") {}
+                        TSKItem("NetworkTroubleshootingItem", previewDescription: "NetworkTroubleshootingItemDescription") {}
+                    }
+                    
+                    TSKSection("VPNSectionTitle") {
+                        TSKItem("com.apple.preferences.application-firewall", previewDescription: "VPNSectionDescription") {}
+                    }
+                    
+                    TSKSection("NetworkStatusTitle") {}
                 }
                 
                 TSKItem("System") {
