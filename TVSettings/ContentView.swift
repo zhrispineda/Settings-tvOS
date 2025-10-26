@@ -176,8 +176,17 @@ struct ContentView: View {
                     TSKSection("NetworkStatusTitle") {}
                 }
                 
-                TSKItem("System") {
-                    TSKSection {}
+                TSKItem("SystemTitle") {
+                    TSKSection("SetupInfoSectionTitle") {
+                        TSKItem("TroubleshootingTitle") {}
+                        TSKItem("WhatsNewTitle") {}
+                    }
+                    
+                    TSKSection("SetupMaintenanceSectionTitle") {
+                        TSKItem("SoftwareUpdateTitle") {}
+                        TSKItem("ResetTitle") {}
+                        TSKItem("RestartTitle") {}
+                    }
                 }
                 
                 TSKItem("Developer") {
