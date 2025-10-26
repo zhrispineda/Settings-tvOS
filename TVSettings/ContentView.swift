@@ -6,17 +6,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     var body: some View {
         TSKViewWrapper("SettingsTitle") {
             TSKGroup {
                 TSKItem("GeneralTitle") {
                     TSKSection {
-                        TSKItem("AboutTitle") {}
-                        TSKItem("GeneralAppearanceSectionTitle", previewDescription: "UserInterfaceStyleDescription") {}
-                        TSKItem("SleepTimeTitle", previewDescription: "SleepTimeDescription") {}
-                        TSKItem("RestrictionsTitle") {}
-                        TSKItem("PrivacyTitle") {}
-                        TSKItem("LegalAndRegulatoryTitle") {}
+                        TSKItem("AboutTitle") {
+                            TSKSection {}
+                        }
+                        TSKItem(
+                            "GeneralAppearanceSectionTitle",
+                            status: colorScheme == .light ? "AppearanceLightModeName" : "AppearanceDarkModeName",
+                            previewDescription: "UserInterfaceStyleDescription"
+                        ) {
+                            TSKSection {}
+                        }
+                        TSKItem("SleepTimeTitle", status: "15 minutes", previewDescription: "SleepTimeDescription") {
+                            TSKSection {}
+                        }
+                        TSKItem("RestrictionsTitle", status: "SettingsOFF") {
+                            TSKSection {}
+                        }
+                        TSKItem("PrivacyTitle") {
+                            TSKSection {}
+                        }
+                        TSKItem("LegalAndRegulatoryTitle") {
+                            TSKSection {}
+                        }
                     }
                     
                     TSKSection("Language & Region") {

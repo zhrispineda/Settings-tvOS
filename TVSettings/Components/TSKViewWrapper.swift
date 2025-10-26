@@ -16,6 +16,7 @@ struct TSKViewWrapper: UIViewControllerRepresentable {
     
     struct SettingItemData {
         let title: String
+        let status: String?
         let accessoryType: AccessoryType
         let action: (() -> Void)?
         let subviews: [SettingGroupData]?
@@ -30,6 +31,7 @@ struct TSKViewWrapper: UIViewControllerRepresentable {
         
         init(
             title: String,
+            status: String? = nil,
             accessoryType: AccessoryType = .none,
             action: (() -> Void)? = nil,
             subviews: [SettingGroupData]? = nil,
@@ -38,6 +40,7 @@ struct TSKViewWrapper: UIViewControllerRepresentable {
             badgeCount: Int = 0
         ) {
             self.title = title
+            self.status = status
             self.accessoryType = accessoryType
             self.action = action
             self.subviews = subviews
@@ -125,6 +128,9 @@ struct TSKViewWrapper: UIViewControllerRepresentable {
                         childControllerClass: childClass
                     ) {
                         childItem.setValue(itemData.previewDescription, forKey: "localizedDescription")
+                        if let status = itemData.status {
+                            childItem.setValue(status, forKey: "defaultValue")
+                        }
                         previewMap.setObject(itemData.previewImageName, forKey: NSValue(nonretainedObject: childItem))
                         items.append(childItem)
                     }
@@ -245,26 +251,8 @@ func TSKSection(
 }
 
 func TSKItem(
-    title: String,
-    accessoryType: TSKViewWrapper.SettingItemData.AccessoryType = .none,
-    previewDescription: String? = nil,
-    previewImageName: String = "settings_atv2_device",
-    badgeCount: Int = 0,
-    action: (() -> Void)? = nil
-) -> TSKViewWrapper.SettingItemData {
-    TSKViewWrapper.SettingItemData(
-        title: title,
-        accessoryType: accessoryType,
-        action: action,
-        subviews: nil,
-        previewDescription: previewDescription,
-        previewImageName: previewImageName,
-        badgeCount: badgeCount
-    )
-}
-
-func TSKItem(
     _ title: String,
+    status: String? = nil,
     accessoryType: TSKViewWrapper.SettingItemData.AccessoryType = .none,
     previewDescription: String? = nil,
     previewImageName: String = "settings_atv2_device",
@@ -274,6 +262,7 @@ func TSKItem(
     let subviews = builder()
     return TSKViewWrapper.SettingItemData(
         title: localized(title),
+        status: localized(status ?? ""),
         accessoryType: accessoryType,
         action: nil,
         subviews: subviews.isEmpty ? nil : subviews,
