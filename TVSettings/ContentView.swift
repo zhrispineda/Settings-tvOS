@@ -222,7 +222,7 @@ struct ContentView: View {
                     }
                 }
                 
-                TSKItem("Power Off") {}
+                TSKItem("SleepTitle") {}
             }
         }
         .ignoresSafeArea()
