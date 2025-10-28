@@ -127,11 +127,9 @@ struct TSKViewWrapper: UIViewControllerRepresentable {
                         description: itemData.previewDescription,
                         childControllerClass: childClass
                     ) {
-                        childItem.setValue(itemData.previewDescription, forKey: "localizedDescription")
                         if let status = itemData.status {
                             childItem.setValue(status, forKey: "defaultValue")
                         }
-                        previewMap.setObject(itemData.previewImageName, forKey: NSValue(nonretainedObject: childItem))
                         items.append(childItem)
                     }
                 } else if itemData.accessoryType == .disclosureIndicator {
@@ -151,8 +149,6 @@ struct TSKViewWrapper: UIViewControllerRepresentable {
                         description: itemData.previewDescription,
                         childControllerClass: childClass
                     ) {
-                        childItem.setValue(itemData.previewDescription, forKey: "localizedDescription")
-                        previewMap.setObject(itemData.previewImageName, forKey: NSValue(nonretainedObject: childItem))
                         items.append(childItem)
                     }
                 } else if let actionClosure = itemData.action {
@@ -163,6 +159,9 @@ struct TSKViewWrapper: UIViewControllerRepresentable {
                         action: #selector(Coordinator.handleActionItem(_:))
                     ) {
                         coordinator.registerAction(for: actionItem, action: actionClosure)
+                        if let status = itemData.status {
+                            actionItem.setValue(status, forKey: "defaultValue")
+                        }
                         items.append(actionItem)
                     }
                 } else {
@@ -266,6 +265,26 @@ func TSKItem(
         accessoryType: accessoryType,
         action: nil,
         subviews: subviews.isEmpty ? nil : subviews,
+        previewDescription: localized(previewDescription ?? ""),
+        previewImageName: previewImageName,
+        badgeCount: badgeCount
+    )
+}
+
+func TSKActionItem(
+    _ title: String,
+    status: String? = nil,
+    previewDescription: String? = nil,
+    previewImageName: String = "settings_atv2_device",
+    badgeCount: Int = 0,
+    action: @escaping () -> Void
+) -> TSKViewWrapper.SettingItemData {
+    return TSKViewWrapper.SettingItemData(
+        title: localized(title),
+        status: localized(status ?? ""),
+        accessoryType: .none,
+        action: action,
+        subviews: nil,
         previewDescription: localized(previewDescription ?? ""),
         previewImageName: previewImageName,
         badgeCount: badgeCount

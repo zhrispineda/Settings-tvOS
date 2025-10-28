@@ -38,10 +38,16 @@ struct ContentView: View {
                     }
                     
                     TSKSection("Language & Region") {
-                        TSKItem("Apple TV Languages", previewImageName: "globe") {}
-                        TSKItem("Keyboard Layout", previewDescription: "KeyboardTypeDescription") {}
-                        TSKItem("Dictation", previewDescription: "DictationDescription") {}
-                        TSKItem("RegionFormatTitle") {}
+                        TSKItem("Apple TV Languages", status: "UseMe", previewImageName: "globe") {
+                            TSKSection {}
+                        }
+                        TSKItem("Keyboard Layout", status: "Auto", previewDescription: "KeyboardTypeDescription") {
+                            TSKSection {}
+                        }
+                        TSKActionItem("Dictation", status: "Off", previewDescription: "DictationDescription") {}
+                        TSKItem("RegionFormatTitle", status: "United States") {
+                            TSKSection {}
+                        }
                     }
                     
                     TSKSection("GeneralSiriSectionTitle") {
@@ -240,7 +246,7 @@ struct ContentView: View {
                     }
                 }
                 
-                TSKItem("SleepTitle") {}
+                TSKActionItem("SleepTitle") {}
             }
         }
         .ignoresSafeArea()
