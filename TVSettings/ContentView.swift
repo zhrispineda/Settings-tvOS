@@ -51,24 +51,50 @@ struct ContentView: View {
                     }
                     
                     TSKSection("GeneralSiriSectionTitle") {
-                        TSKItem("SiriEnableTitle", previewDescription: "SiriDescription") {}
-                        TSKItem("SiriLanguageTitle", previewDescription: "SiriDescription") {}
-                        TSKItem("SiriHistoryTitle", previewDescription: "SiriHistoryDescriptionNotOptedIn") {}
-                        TSKItem("SiriAlwaysShowSpeechTitle", previewDescription: "SiriAlwaysShowSpeechDescription") {}
-                        TSKItem("SiriOSAItemTitle", previewDescription: "SiriOSAItemDescription") {}
-                        TSKItem("SiriTCCItemTitle", previewDescription: "SiriTCCItemDescription") {}
-                        TSKItem("BUTTON_TITLE") {}
+                        TSKActionItem("SiriEnableTitle", status: "Off", previewDescription: "SiriDescription") {}
+                        TSKItem("SiriLanguageTitle", status: "English (United States)", previewDescription: "SiriDescription") {
+                            TSKSection {}
+                        }
+                        TSKItem("SiriHistoryTitle", previewDescription: "SiriHistoryDescriptionNotOptedIn") {
+                            TSKSection {}
+                        }
+                        TSKActionItem("SiriAlwaysShowSpeechTitle", status: "Off", previewDescription: "SiriAlwaysShowSpeechDescription") {}
+                        TSKActionItem("SiriOSAItemTitle", status: "Off", previewDescription: "SiriOSAItemDescription") {}
+                        TSKItem("SiriTCCItemTitle", previewDescription: "SiriTCCItemDescription") {
+                            TSKSection {}
+                        }
+                        TSKItem("BUTTON_TITLE") {
+                            TSKSection {}
+                        }
+                    }
+                    
+                    TSKSection("GeneralUsageSectionTitle") {
+                        TSKItem("DeviceUsageTitle") {
+                            TSKSection {}
+                        }
+                        TSKItem("BackgroundAppRefreshTitle") {
+                            TSKSection {}
+                        }
+                        TSKItem("PreviouslyUsedEmailTitle") {
+                            TSKSection {}
+                        }
                     }
                     
                     TSKSection("GeneralDateAndTimeSectionTitle") {
-                        TSKItem("TimeZoneSetAutomaticallyTitle") {}
-                        TSKItem("TimeZoneTitle") {}
-                        TSKItem("TimeZoneSet24HourTitle", previewDescription: "SiriDescription") {}
+                        TSKActionItem("TimeZoneSetAutomaticallyTitle", status: "SettingsOFF") {}
+                        TSKItem("TimeZoneTitle", status: "Cupertino") {
+                            TSKSection {}
+                        }
+                        TSKActionItem("TimeZoneSet24HourTitle", status: "TimeZone12HrValue") {}
                     }
                     
                     TSKSection("GeneralManagementSectionTitle") {
-                        TSKItem("com.apple.preferences.application-firewall") {}
-                        TSKItem("BUTTON_TITLE") {}
+                        TSKItem("com.apple.preferences.application-firewall", status: "VPNInactiveValue") {
+                            TSKSection {}
+                        }
+                        TSKItem("BUTTON_TITLE") {
+                            TSKSection {}
+                        }
                     }
                 }
                 
