@@ -36,7 +36,9 @@ struct GeneralSection: SettingsSectionBuilder {
             }
             
             TSKSection("Language & Region") {
-                TSKItem("Apple TV Languages", status: "UseMe", previewImageName: "globe")
+                TSKItem("Apple TV Languages", status: "UseMe", previewImageName: "globe") {
+                    TSKSection {}
+                }
                 TSKItem("Keyboard Layout", status: "Auto", previewDescription: "KeyboardTypeDescription") {
                     TSKSection {}
                 }
