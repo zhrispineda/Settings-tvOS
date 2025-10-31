@@ -234,10 +234,33 @@ struct SettingGroupSectionBuilder {
     }
 }
 
+protocol SettingsSectionBuilder {
+    func build() -> TSKViewWrapper.SettingItemData
+}
+
+@resultBuilder
+struct SettingsSectionBuildWrapper {
+    static func buildBlock(_ components: TSKViewWrapper.SettingItemData...) -> [TSKViewWrapper.SettingItemData] {
+        components
+    }
+    
+    static func buildExpression(_ expression: TSKViewWrapper.SettingItemData) -> [TSKViewWrapper.SettingItemData] {
+        [expression]
+    }
+    
+    static func buildExpression(_ expression: SettingsSectionBuilder) -> [TSKViewWrapper.SettingItemData] {
+        [expression.build()]
+    }
+    
+    static func buildBlock(_ components: [TSKViewWrapper.SettingItemData]...) -> [TSKViewWrapper.SettingItemData] {
+        components.flatMap { $0 }
+    }
+}
+
 // MARK: - Builder Functions
 func TSKGroup(
     _ title: String? = nil,
-    @SettingItemBuilder builder: () -> [TSKViewWrapper.SettingItemData]
+    @SettingsSectionBuildWrapper builder: () -> [TSKViewWrapper.SettingItemData]
 ) -> TSKViewWrapper.SettingGroupData {
     TSKViewWrapper.SettingGroupData(title: title, items: builder())
 }
