@@ -13,19 +13,7 @@ struct ContentView: View {
             TSKGroup {
                 GeneralSection(colorScheme: colorScheme)
                 
-                TSKItem("AccountsTitle") {
-                    TSKSection("AccountsUserProfilesPrimaryUserGroupTitle") {
-                        TSKItem("AccountsUserProfilesAddPrimaryUserTitle", previewDescription: "AccountsAddDefaultUserProfileDescription") {}
-                    }
-                    
-                    TSKSection("AccountsUserProfilesGuestUsersGroupTitle") {
-                        TSKItem("AccountsAddNewUserTitle", previewDescription: "AccountsAddAdditionalUserProfileDescription") {}
-                    }
-                    
-                    TSKSection("iTMSAccountsLocationSectionTitle") {
-                        TSKItem("iTMSLocationTitle") {}
-                    }
-                }
+                UserProfilesSection()
                 
                 TSKItem("AudioVideoTitle") {
                     TSKSection("AVVideoSectionTitle") {

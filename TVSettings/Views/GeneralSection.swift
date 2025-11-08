@@ -2,6 +2,8 @@
 //  GeneralSection.swift
 //  TVSettings
 //
+//  Settings > General
+//
 
 import SwiftUI
 
