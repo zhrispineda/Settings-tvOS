@@ -5,6 +5,12 @@
 
 import SwiftUI
 
+enum AccessoryType: Int {
+    case none = 0
+    case disclosureIndicator = 1
+    case progress = 4
+}
+
 struct TSKViewWrapper: UIViewControllerRepresentable {
     let navigationTitle: String?
     let settingGroups: [SettingGroupData]
@@ -23,11 +29,6 @@ struct TSKViewWrapper: UIViewControllerRepresentable {
         let previewDescription: String?
         let previewImageName: String
         let badgeCount: Int?
-        
-        enum AccessoryType {
-            case none
-            case disclosureIndicator
-        }
         
         init(
             title: String,
@@ -164,6 +165,7 @@ struct TSKViewWrapper: UIViewControllerRepresentable {
                         if let status = itemData.status {
                             actionItem.setValue(status, forKey: "defaultValue")
                         }
+                        actionItem.setValue(itemData.accessoryType.rawValue, forKey: "accessoryTypes")
                         items.append(actionItem)
                     }
                 } else {
@@ -323,12 +325,13 @@ func TSKActionItem(
     previewDescription: String? = nil,
     previewImageName: String = "settings_atv2_device",
     badgeCount: Int = 0,
+    accessoryType: AccessoryType = .none,
     action: @escaping () -> Void
 ) -> TSKViewWrapper.SettingItemData {
     return TSKViewWrapper.SettingItemData(
         title: localized(title),
         status: localized(status ?? ""),
-        accessoryType: .none,
+        accessoryType: accessoryType,
         action: action,
         subviews: nil,
         previewDescription: localized(previewDescription ?? ""),

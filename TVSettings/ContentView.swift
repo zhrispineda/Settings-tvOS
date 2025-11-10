@@ -19,19 +19,7 @@ struct ContentView: View {
                 
                 AmbientSection()
                 
-                TSKItem("AirPlayTitle") {
-                    TSKSection {
-                        TSKItem("APEnabledTitle", previewDescription: "APDescriptionText") {}
-                        TSKItem("APAccessControlTitle") {}
-                        TSKItem("APCRDTitle", previewDescription: "APCRDModeDescriptionText") {}
-                        TSKItem("AVAdjustForOverscanTitle", previewDescription: "AVAdjustForOverscanDescription") {}
-                        TSKItem("AirPlayPeerToPeerTitle", previewDescription: "AirPlayPeerToPeerDescription") {}
-                    }
-                    
-                    TSKSection("HomeKitSectionTitle") {
-                        TSKItem("WHARoomTitle", previewDescription: "WHASynchronizingDescription") {}
-                    }
-                }
+                AirPlaySection()
                 
                 TSKItem("RemotesTitle") {
                     TSKSection("BluetoothOtherDevicesSectionTitle") {
