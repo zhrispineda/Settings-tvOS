@@ -25,13 +25,7 @@ struct ContentView: View {
                 
                 AccessibilitySection()
                 
-                TSKItem("AppsTitle") {
-                    TSKSection {
-                        TSKItem("AutoUpdateAppsTitle") {}
-                        TSKItem("AppsAutoDownloadBackgroundAssetsTitle", previewDescription: "AppsAutoDownloadBackgroundAssetsDescription") {}
-                        TSKItem("AppsAutoOffloadTitle", previewDescription: "AppsAutoOffloadDescription") {}
-                    }
-                }
+                AppsSection()
                 
                 TSKItem("NetworkTitle") {
                     TSKSection("NetworkConnectionTitle") {
