@@ -27,18 +27,7 @@ struct ContentView: View {
                 
                 AppsSection()
                 
-                TSKItem("NetworkTitle") {
-                    TSKSection("NetworkConnectionTitle") {
-                        TSKItem("NetworkEthernetItem", previewDescription: "NetworkEthernetActiveItemDescription") {}
-                        TSKItem("NetworkTroubleshootingItem", previewDescription: "NetworkTroubleshootingItemDescription") {}
-                    }
-                    
-                    TSKSection("VPNSectionTitle") {
-                        TSKItem("com.apple.preferences.application-firewall", previewDescription: "VPNSectionDescription") {}
-                    }
-                    
-                    TSKSection("NetworkStatusTitle") {}
-                }
+                NetworkSection()
                 
                 TSKItem("SystemTitle") {
                     TSKSection("SetupInfoSectionTitle") {
