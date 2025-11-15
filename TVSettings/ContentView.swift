@@ -29,18 +29,7 @@ struct ContentView: View {
                 
                 NetworkSection()
                 
-                TSKItem("SystemTitle") {
-                    TSKSection("SetupInfoSectionTitle") {
-                        TSKItem("TroubleshootingTitle") {}
-                        TSKItem("WhatsNewTitle") {}
-                    }
-                    
-                    TSKSection("SetupMaintenanceSectionTitle") {
-                        TSKItem("SoftwareUpdateTitle") {}
-                        TSKItem("ResetTitle") {}
-                        TSKItem("RestartTitle") {}
-                    }
-                }
+                SetupSection()
                 
                 TSKItem("DeveloperTitle") {
                     TSKSection("UIAutomationGroupTitle") {
