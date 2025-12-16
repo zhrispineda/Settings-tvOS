@@ -17,7 +17,10 @@ A **work-in-progress** recreation of the tvOS Settings app.
 
 ## Preview
 
-![An image of the recreated tvOS Settings app in both light and dark mode. A large Apple TV icon is shown on the left with a list of options from General to Developer are shown on the right.](Assets/Preview.png)
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="Assets/Dark.png">
+    <img src="Assets/Light.png" alt="The project's Settings app in the Xcode Previews canvas for tvOS, with a large Apple TV icon on the left and a sidebar list of options from General to Developer on the right.">
+</picture>
 
 ## Usage
 Open in Xcode and run with either Simulator or a paired physical device running tvOS with Developer Mode enabled as a destination.
