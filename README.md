@@ -5,7 +5,7 @@ A **work-in-progress** recreation of the tvOS Settings app.
 > This project is focused on the latest public releases of tvOS and Xcode. Use an older branch for older versions.
 
 ## Information
-- Based on tvOS 26.5 (23L471).
+- Based on tvOS 26.6 (23L773).
 - Layout based on Simulator and not a physical Apple TV (for now).
 - All features within the app are only simulations and have no effect on the device outside of the app.
 - Previous versions are available as their own branches, going as far back as 18.5. Fewer features are available in earlier versions.
