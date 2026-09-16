@@ -5,10 +5,11 @@ A **work-in-progress** recreation of the tvOS Settings app.
 > This project is focused on the latest public releases of tvOS and Xcode. Use an older branch for older versions.
 
 ## Information
-- Based on tvOS 26.6 (23L773).
+- Based on tvOS 27.0 (24J361).
 - Layout based on Simulator and not a physical Apple TV (for now).
 - All features within the app are only simulations and have no effect on the device outside of the app.
 - Previous versions are available as their own branches, going as far back as 18.5. Fewer features are available in earlier versions.
+- Localization strings pulled and combined from Settings.app, AccessibilitySettings.bundle, and DeveloperSettingsATV.bundle.
 
 > [!CAUTION]
 > This project makes use of `TVSettingKit`, a private framework not meant for public use as it is not officially supported.
@@ -31,7 +32,6 @@ Open in Xcode and run with either Simulator or a paired physical device running 
 ## Disclaimers
 - This app is a personal and educational recreation of Apple's apps and designs, made in appreciation of the teams that built and maintain them.
 - All assets including icons, images, localization strings, and other resources are not my own in any way.
-- If you have any questions or feedback, please contact me through the options listed on my profile.
 
 ## Other Settings Projects
 - **macOS System Settings** https://github.com/zhrispineda/System-Settings
